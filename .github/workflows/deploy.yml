@@ -28,7 +28,7 @@ jobs:
       - name: Build Docker Image
         shell: powershell
         run: |
-          docker build -t new-project:latest .
+          docker build -f DockerFile -t new-project:latest .
           if ($LASTEXITCODE -ne 0) {
             throw "Docker build failed."
           }

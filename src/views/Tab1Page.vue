@@ -21,7 +21,7 @@
 
           <div class="field-group">
             <label class="field-label">Description</label>
-            <ion-textarea v-model="description" class="custom-input custom-textarea" auto-grow rows="3" placeholder="" />
+            <ion-textarea v-model="description" class="custom-input custom-textarea" auto-grow :rows="3" placeholder="" />
           </div>
 
           <div class="action-row">
