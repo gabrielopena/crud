@@ -1,0 +1,53 @@
+﻿2026-11-04T02:52:13.3732443Z ##[group]Run docker build -f DockerFile -t new-project:latest .
+2026-11-04T02:52:13.3733609Z [36;1mdocker build -f DockerFile -t new-project:latest .[0m
+2026-11-04T02:52:13.3734105Z [36;1mif ($LASTEXITCODE -ne 0) {[0m
+2026-11-04T02:52:13.3734484Z [36;1m  throw "Docker build failed."[0m
+2026-11-04T02:52:13.3734811Z [36;1m}[0m
+2026-11-04T02:52:13.3878705Z shell: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE -command ". '{0}'"
+2026-11-04T02:52:13.3879675Z ##[endgroup]
+2026-11-04T02:52:30.2796205Z #0 building with "desktop-linux" instance using docker driver
+2026-11-04T02:52:30.2797763Z 
+2026-11-04T02:52:30.2798180Z #1 [internal] load build definition from DockerFile
+2026-11-04T02:52:30.2804455Z #1 transferring dockerfile: 281B 0.0s done
+2026-11-04T02:52:30.2805722Z #1 DONE 0.1s
+2026-11-04T02:52:30.2806226Z 
+2026-11-04T02:52:30.2807543Z #2 [internal] load metadata for docker.io/library/node:22-alpine
+2026-11-04T02:52:32.3111575Z #2 ...
+2026-11-04T02:52:32.3112769Z 
+2026-11-04T02:52:32.3113562Z #3 [auth] library/nginx:pull token for registry-1.docker.io
+2026-11-04T02:52:32.3115007Z #3 DONE 0.0s
+2026-11-04T02:52:32.3115224Z 
+2026-11-04T02:52:32.3115444Z #4 [auth] library/node:pull token for registry-1.docker.io
+2026-11-04T02:52:32.3115903Z #4 DONE 0.0s
+2026-11-04T02:52:32.4619937Z 
+2026-11-04T02:52:32.4621881Z #5 [internal] load metadata for docker.io/library/nginx:alpine
+2026-11-04T02:53:03.3107653Z #5 ERROR: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.3108849Z 
+2026-11-04T02:53:03.3109161Z #2 [internal] load metadata for docker.io/library/node:22-alpine
+2026-11-04T02:53:03.3110653Z #2 ERROR: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.4742762Z ------
+2026-11-04T02:53:03.4746258Z  > [internal] load metadata for docker.io/library/node:22-alpine:
+2026-11-04T02:53:03.4746808Z ------
+2026-11-04T02:53:03.4747059Z ------
+2026-11-04T02:53:03.4747427Z  > [internal] load metadata for docker.io/library/nginx:alpine:
+2026-11-04T02:53:03.4747904Z ------
+2026-11-04T02:53:03.5297673Z DockerFile:11
+2026-11-04T02:53:03.5313380Z --------------------
+2026-11-04T02:53:03.5318631Z    9 |     RUN npm run build
+2026-11-04T02:53:03.5323179Z   10 |     
+2026-11-04T02:53:03.5327995Z   11 | >>> FROM nginx:alpine
+2026-11-04T02:53:03.5330620Z   12 |     
+2026-11-04T02:53:03.5331360Z   13 |     COPY --from=build /app/dist /usr/share/nginx/html
+2026-11-04T02:53:03.5336017Z --------------------
+2026-11-04T02:53:03.5338413Z ERROR: failed to build: failed to solve: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.5342363Z 
+2026-11-04T02:53:03.5343004Z View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/wsl8pa62sxay272kaqgnu2d7h
+2026-11-04T02:53:04.0886866Z Docker build failed.
+2026-11-04T02:53:04.0888785Z At C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\2c432850-858a-416d-8f1a-e376f30f72c3.ps1:4 
+2026-11-04T02:53:04.0890657Z char:3
+2026-11-04T02:53:04.0891404Z +   throw "Docker build failed."
+2026-11-04T02:53:04.0892365Z +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-11-04T02:53:04.0894154Z     + CategoryInfo          : OperationStopped: (Docker build failed.:String) [], RuntimeException
+2026-11-04T02:53:04.0896108Z     + FullyQualifiedErrorId : Docker build failed.
+2026-11-04T02:53:04.0897156Z  
+2026-11-04T02:53:04.1759828Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,237 @@
+﻿2026-11-04T02:40:54.5208338Z Current runner version: '2.338.2'
+2026-11-04T02:40:54.5219234Z Runner name: 'CLIENT'
+2026-11-04T02:40:54.5220001Z Runner group name: 'Default'
+2026-11-04T02:40:54.5220915Z Machine name: 'CLIENT'
+2026-11-04T02:40:54.5224810Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T02:40:54.5228179Z Contents: read
+2026-11-04T02:40:54.5228640Z Metadata: read
+2026-11-04T02:40:54.5229082Z ##[endgroup]
+2026-11-04T02:40:54.5231347Z Secret source: Actions
+2026-11-04T02:40:54.5232068Z Cache mode: write
+2026-11-04T02:40:54.5232656Z Prepare workflow directory
+2026-11-04T02:40:54.6085744Z Prepare all required actions
+2026-11-04T02:40:54.6219233Z Getting action download info
+2026-11-04T02:40:55.7676553Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T02:40:59.3902360Z Complete job name: deploy
+2026-11-04T02:41:00.1673907Z ##[group]Run actions/checkout@v4
+2026-11-04T02:41:00.1677446Z with:
+2026-11-04T02:41:00.1679096Z   repository: gabrielopena/crud
+2026-11-04T02:41:00.1699429Z   token: ***
+2026-11-04T02:41:00.1701789Z   ssh-strict: true
+2026-11-04T02:41:00.1704053Z   ssh-user: git
+2026-11-04T02:41:00.1706387Z   persist-credentials: true
+2026-11-04T02:41:00.1711011Z   clean: true
+2026-11-04T02:41:00.1712354Z   sparse-checkout-cone-mode: true
+2026-11-04T02:41:00.1713949Z   fetch-depth: 1
+2026-11-04T02:41:00.1715641Z   fetch-tags: false
+2026-11-04T02:41:00.1717128Z   show-progress: true
+2026-11-04T02:41:00.1718371Z   lfs: false
+2026-11-04T02:41:00.1719473Z   submodules: false
+2026-11-04T02:41:00.1720616Z   set-safe-directory: true
+2026-11-04T02:41:00.1721960Z   allow-unsafe-pr-checkout: false
+2026-11-04T02:41:00.1740458Z ##[endgroup]
+2026-11-04T02:41:00.7974607Z Syncing repository: gabrielopena/crud
+2026-11-04T02:41:00.7983236Z ##[group]Getting Git version info
+2026-11-04T02:41:00.7987422Z Working directory is 'C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\crud\crud'
+2026-11-04T02:41:00.9189536Z [command]"C:\Program Files\Git\cmd\git.exe" version
+2026-11-04T02:41:01.1114514Z git version 2.55.0.windows.3
+2026-11-04T02:41:01.1679712Z ##[endgroup]
+2026-11-04T02:41:01.1749564Z Copying 'C:\Users\gabri\.gitconfig' to 'C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\4fce9b5d-9b4b-4c52-aaf2-a17ff15dfa55\.gitconfig'
+2026-11-04T02:41:01.1986162Z Temporarily overriding HOME='C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\4fce9b5d-9b4b-4c52-aaf2-a17ff15dfa55' before making global git config changes
+2026-11-04T02:41:01.2003586Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T02:41:01.2009007Z [command]"C:\Program Files\Git\cmd\git.exe" config --global --add safe.directory C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\crud\crud
+2026-11-04T02:41:01.4021860Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --get remote.origin.url
+2026-11-04T02:41:01.5630808Z https://github.com/gabrielopena/crud
+2026-11-04T02:41:01.5801235Z ##[group]Removing previously created refs, to avoid conflicts
+2026-11-04T02:41:01.5820814Z [command]"C:\Program Files\Git\cmd\git.exe" rev-parse --symbolic-full-name --verify --quiet HEAD
+2026-11-04T02:41:01.8185985Z HEAD
+2026-11-04T02:41:02.6329330Z ##[endgroup]
+2026-11-04T02:41:02.6339787Z [command]"C:\Program Files\Git\cmd\git.exe" submodule status
+2026-11-04T02:41:06.1982098Z ##[group]Cleaning the repository
+2026-11-04T02:41:06.2090441Z [command]"C:\Program Files\Git\cmd\git.exe" clean -ffdx
+2026-11-04T02:41:06.3802692Z [command]"C:\Program Files\Git\cmd\git.exe" reset --hard HEAD
+2026-11-04T02:41:06.6115949Z HEAD is now at 6290b7d helo
+2026-11-04T02:41:06.6280578Z ##[endgroup]
+2026-11-04T02:41:06.6309150Z ##[group]Disabling automatic garbage collection
+2026-11-04T02:41:06.6423095Z [command]"C:\Program Files\Git\cmd\git.exe" config --local gc.auto 0
+2026-11-04T02:41:06.8795016Z ##[endgroup]
+2026-11-04T02:41:06.8795865Z ##[group]Setting up auth
+2026-11-04T02:41:06.8918773Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T02:41:07.1122009Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-04T02:41:12.4176696Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T02:41:12.8755111Z http.https://github.com/.extraheader
+2026-11-04T02:41:12.9053912Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T02:41:13.2706563Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-04T02:41:17.5476415Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T02:41:17.9024927Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-04T02:41:21.3905693Z [command]"C:\Program Files\Git\cmd\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-04T02:41:21.5814727Z ##[endgroup]
+2026-11-04T02:41:21.5834754Z ##[group]Fetching the repository
+2026-11-04T02:41:21.5836176Z [command]"C:\Program Files\Git\cmd\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +08791d5af3d8d3b866c2e59990bd68001599f1cc:refs/remotes/origin/main
+2026-11-04T02:51:57.9944779Z From https://github.com/gabrielopena/crud
+2026-11-04T02:51:57.9948523Z  + 6290b7d...08791d5 08791d5af3d8d3b866c2e59990bd68001599f1cc -> origin/main  (forced update)
+2026-11-04T02:51:58.0184666Z ##[endgroup]
+2026-11-04T02:51:58.0185323Z ##[group]Determining the checkout info
+2026-11-04T02:51:58.0207056Z ##[endgroup]
+2026-11-04T02:51:58.0348065Z [command]"C:\Program Files\Git\cmd\git.exe" sparse-checkout disable
+2026-11-04T02:51:58.1611079Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-04T02:51:58.2666198Z ##[group]Checking out the ref
+2026-11-04T02:51:58.2699572Z [command]"C:\Program Files\Git\cmd\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2026-11-04T02:51:59.7657553Z Updating files:  30% (124/405)
+2026-11-04T02:51:59.8535385Z Updating files:  31% (126/405)
+2026-11-04T02:51:59.9651530Z Updating files:  32% (130/405)
+2026-11-04T02:52:00.1327852Z Updating files:  33% (134/405)
+2026-11-04T02:52:00.2186543Z Updating files:  34% (138/405)
+2026-11-04T02:52:00.3140367Z Updating files:  35% (142/405)
+2026-11-04T02:52:00.4027926Z Updating files:  36% (146/405)
+2026-11-04T02:52:00.4309700Z Updating files:  36% (149/405)
+2026-11-04T02:52:00.5510881Z Updating files:  37% (150/405)
+2026-11-04T02:52:00.6310511Z Updating files:  38% (154/405)
+2026-11-04T02:52:00.6803064Z Updating files:  39% (158/405)
+2026-11-04T02:52:00.7182548Z Updating files:  40% (162/405)
+2026-11-04T02:52:00.7367256Z Updating files:  41% (167/405)
+2026-11-04T02:52:00.8004778Z Updating files:  42% (171/405)
+2026-11-04T02:52:00.8155660Z Updating files:  43% (175/405)
+2026-11-04T02:52:00.9760141Z Updating files:  44% (179/405)
+2026-11-04T02:52:01.0969639Z Updating files:  45% (183/405)
+2026-11-04T02:52:01.1825945Z Updating files:  46% (187/405)
+2026-11-04T02:52:01.2800292Z Updating files:  47% (191/405)
+2026-11-04T02:52:01.4317467Z Updating files:  48% (195/405)
+2026-11-04T02:52:01.4859677Z Updating files:  49% (199/405)
+2026-11-04T02:52:01.5634883Z Updating files:  50% (203/405)
+2026-11-04T02:52:01.6525461Z Updating files:  51% (207/405)
+2026-11-04T02:52:01.7469596Z Updating files:  52% (211/405)
+2026-11-04T02:52:01.8119361Z Updating files:  53% (215/405)
+2026-11-04T02:52:01.9351030Z Updating files:  54% (219/405)
+2026-11-04T02:52:02.0452338Z Updating files:  55% (223/405)
+2026-11-04T02:52:02.1327213Z Updating files:  56% (227/405)
+2026-11-04T02:52:02.2132697Z Updating files:  57% (231/405)
+2026-11-04T02:52:02.3910899Z Updating files:  58% (235/405)
+2026-11-04T02:52:02.4453712Z Updating files:  59% (239/405)
+2026-11-04T02:52:02.5330270Z Updating files:  59% (240/405)
+2026-11-04T02:52:02.7446173Z Updating files:  60% (243/405)
+2026-11-04T02:52:02.8446346Z Updating files:  61% (248/405)
+2026-11-04T02:52:02.9853246Z Updating files:  62% (252/405)
+2026-11-04T02:52:03.0836119Z Updating files:  63% (256/405)
+2026-11-04T02:52:03.1657105Z Updating files:  64% (260/405)
+2026-11-04T02:52:03.6316976Z Updating files:  65% (264/405)
+2026-11-04T02:52:03.9632855Z Updating files:  66% (268/405)
+2026-11-04T02:52:04.0327833Z Updating files:  67% (272/405)
+2026-11-04T02:52:04.1358492Z Updating files:  68% (276/405)
+2026-11-04T02:52:04.2256281Z Updating files:  69% (280/405)
+2026-11-04T02:52:04.3323482Z Updating files:  70% (284/405)
+2026-11-04T02:52:04.4312861Z Updating files:  71% (288/405)
+2026-11-04T02:52:04.5480105Z Updating files:  72% (292/405)
+2026-11-04T02:52:04.6479276Z Updating files:  73% (296/405)
+2026-11-04T02:52:04.7529726Z Updating files:  74% (300/405)
+2026-11-04T02:52:04.8643479Z Updating files:  75% (304/405)
+2026-11-04T02:52:04.9919525Z Updating files:  76% (308/405)
+2026-11-04T02:52:05.0986977Z Updating files:  77% (312/405)
+2026-11-04T02:52:05.1719363Z Updating files:  78% (316/405)
+2026-11-04T02:52:05.2873104Z Updating files:  79% (320/405)
+2026-11-04T02:52:05.4473033Z Updating files:  80% (324/405)
+2026-11-04T02:52:05.5381198Z Updating files:  81% (329/405)
+2026-11-04T02:52:05.5979207Z Updating files:  82% (333/405)
+2026-11-04T02:52:05.6781105Z Updating files:  83% (337/405)
+2026-11-04T02:52:05.7607858Z Updating files:  84% (341/405)
+2026-11-04T02:52:05.8315859Z Updating files:  85% (345/405)
+2026-11-04T02:52:05.9087362Z Updating files:  86% (349/405)
+2026-11-04T02:52:05.9480734Z Updating files:  87% (353/405)
+2026-11-04T02:52:06.1948946Z Updating files:  88% (357/405)
+2026-11-04T02:52:06.2470424Z Updating files:  89% (361/405)
+2026-11-04T02:52:06.5074318Z Updating files:  90% (365/405)
+2026-11-04T02:52:06.5537926Z Updating files:  90% (368/405)
+2026-11-04T02:52:06.6397114Z Updating files:  91% (369/405)
+2026-11-04T02:52:06.7910708Z Updating files:  92% (373/405)
+2026-11-04T02:52:06.9238824Z Updating files:  93% (377/405)
+2026-11-04T02:52:07.0296764Z Updating files:  94% (381/405)
+2026-11-04T02:52:07.0649873Z Updating files:  95% (385/405)
+2026-11-04T02:52:07.1123938Z Updating files:  96% (389/405)
+2026-11-04T02:52:09.7109179Z Updating files:  97% (393/405)
+2026-11-04T02:52:11.4049273Z Updating files:  97% (394/405)
+2026-11-04T02:52:11.4254122Z Updating files:  97% (396/405)
+2026-11-04T02:52:11.4434054Z Updating files:  98% (397/405)
+2026-11-04T02:52:11.4598811Z Updating files:  99% (401/405)
+2026-11-04T02:52:11.4600017Z Updating files: 100% (405/405)
+2026-11-04T02:52:11.4601236Z Updating files: 100% (405/405), done.
+2026-11-04T02:52:11.4885166Z Previous HEAD position was 6290b7d helo
+2026-11-04T02:52:11.5366311Z Switched to and reset branch 'main'
+2026-11-04T02:52:11.5485831Z branch 'main' set up to track 'origin/main'.
+2026-11-04T02:52:11.5486654Z Your branch is up to date with 'origin/main'.
+2026-11-04T02:52:11.6213438Z ##[endgroup]
+2026-11-04T02:52:11.7576097Z [command]"C:\Program Files\Git\cmd\git.exe" log -1 --format=%H
+2026-11-04T02:52:11.8404944Z 08791d5af3d8d3b866c2e59990bd68001599f1cc
+2026-11-04T02:52:12.1665403Z ##[group]Run docker --version
+2026-11-04T02:52:12.1671837Z [36;1mdocker --version[0m
+2026-11-04T02:52:12.1672596Z [36;1mif ($LASTEXITCODE -ne 0) {[0m
+2026-11-04T02:52:12.1673390Z [36;1m  throw "Docker is unavailable."[0m
+2026-11-04T02:52:12.1674192Z [36;1m}[0m
+2026-11-04T02:52:12.1858761Z shell: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE -command ". '{0}'"
+2026-11-04T02:52:12.1859176Z ##[endgroup]
+2026-11-04T02:52:12.9226028Z Docker version 29.9.2, build a82e528
+2026-11-04T02:52:13.3732490Z ##[group]Run docker build -f DockerFile -t new-project:latest .
+2026-11-04T02:52:13.3733615Z [36;1mdocker build -f DockerFile -t new-project:latest .[0m
+2026-11-04T02:52:13.3734109Z [36;1mif ($LASTEXITCODE -ne 0) {[0m
+2026-11-04T02:52:13.3734487Z [36;1m  throw "Docker build failed."[0m
+2026-11-04T02:52:13.3734814Z [36;1m}[0m
+2026-11-04T02:52:13.3878872Z shell: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE -command ". '{0}'"
+2026-11-04T02:52:13.3879679Z ##[endgroup]
+2026-11-04T02:52:30.2796378Z #0 building with "desktop-linux" instance using docker driver
+2026-11-04T02:52:30.2797784Z 
+2026-11-04T02:52:30.2798189Z #1 [internal] load build definition from DockerFile
+2026-11-04T02:52:30.2804504Z #1 transferring dockerfile: 281B 0.0s done
+2026-11-04T02:52:30.2805732Z #1 DONE 0.1s
+2026-11-04T02:52:30.2806237Z 
+2026-11-04T02:52:30.2807596Z #2 [internal] load metadata for docker.io/library/node:22-alpine
+2026-11-04T02:52:32.3111706Z #2 ...
+2026-11-04T02:52:32.3113042Z 
+2026-11-04T02:52:32.3113568Z #3 [auth] library/nginx:pull token for registry-1.docker.io
+2026-11-04T02:52:32.3115030Z #3 DONE 0.0s
+2026-11-04T02:52:32.3115228Z 
+2026-11-04T02:52:32.3115448Z #4 [auth] library/node:pull token for registry-1.docker.io
+2026-11-04T02:52:32.3115907Z #4 DONE 0.0s
+2026-11-04T02:52:32.4620040Z 
+2026-11-04T02:52:32.4621906Z #5 [internal] load metadata for docker.io/library/nginx:alpine
+2026-11-04T02:53:03.3107713Z #5 ERROR: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.3108873Z 
+2026-11-04T02:53:03.3109165Z #2 [internal] load metadata for docker.io/library/node:22-alpine
+2026-11-04T02:53:03.3110667Z #2 ERROR: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.4742807Z ------
+2026-11-04T02:53:03.4746310Z  > [internal] load metadata for docker.io/library/node:22-alpine:
+2026-11-04T02:53:03.4746812Z ------
+2026-11-04T02:53:03.4747062Z ------
+2026-11-04T02:53:03.4747431Z  > [internal] load metadata for docker.io/library/nginx:alpine:
+2026-11-04T02:53:03.4747907Z ------
+2026-11-04T02:53:03.5298076Z DockerFile:11
+2026-11-04T02:53:03.5313535Z --------------------
+2026-11-04T02:53:03.5318639Z    9 |     RUN npm run build
+2026-11-04T02:53:03.5323748Z   10 |     
+2026-11-04T02:53:03.5328029Z   11 | >>> FROM nginx:alpine
+2026-11-04T02:53:03.5330629Z   12 |     
+2026-11-04T02:53:03.5331364Z   13 |     COPY --from=build /app/dist /usr/share/nginx/html
+2026-11-04T02:53:03.5336421Z --------------------
+2026-11-04T02:53:03.5338431Z ERROR: failed to build: failed to solve: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io: no such host
+2026-11-04T02:53:03.5342380Z 
+2026-11-04T02:53:03.5343009Z View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/wsl8pa62sxay272kaqgnu2d7h
+2026-11-04T02:53:04.0886979Z Docker build failed.
+2026-11-04T02:53:04.0888802Z At C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\2c432850-858a-416d-8f1a-e376f30f72c3.ps1:4 
+2026-11-04T02:53:04.0890671Z char:3
+2026-11-04T02:53:04.0891415Z +   throw "Docker build failed."
+2026-11-04T02:53:04.0892374Z +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-11-04T02:53:04.0894167Z     + CategoryInfo          : OperationStopped: (Docker build failed.:String) [], RuntimeException
+2026-11-04T02:53:04.0896124Z     + FullyQualifiedErrorId : Docker build failed.
+2026-11-04T02:53:04.0897168Z  
+2026-11-04T02:53:04.1759874Z ##[error]Process completed with exit code 1.
+2026-11-04T02:53:04.3285352Z Post job cleanup.
+2026-11-04T02:53:04.7723997Z [command]"C:\Program Files\Git\cmd\git.exe" version
+2026-11-04T02:53:04.8577772Z git version 2.55.0.windows.3
+2026-11-04T02:53:04.8731357Z Copying 'C:\Users\gabri\.gitconfig' to 'C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\ee39a0c8-4606-4c8b-be84-64d6810a3409\.gitconfig'
+2026-11-04T02:53:04.8754393Z Temporarily overriding HOME='C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\_temp\ee39a0c8-4606-4c8b-be84-64d6810a3409' before making global git config changes
+2026-11-04T02:53:04.8755553Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T02:53:04.8763657Z [command]"C:\Program Files\Git\cmd\git.exe" config --global --add safe.directory C:\Users\gabri\OneDrive\Desktop\opena\opena\actions-runner\_work\crud\crud
+2026-11-04T02:53:05.0055515Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T02:53:05.1222958Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-04T02:53:07.4070218Z fatal: No url found for submodule path 'actions-runner/_work/crud/crud' in .gitmodules
+2026-11-04T02:53:07.4538168Z ##[warning]The process 'C:\Program Files\Git\cmd\git.exe' failed with exit code 128
+2026-11-04T02:53:07.5328986Z Cleaning up orphan processes
+2026-11-04T02:53:07.8854075Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
