@@ -1,0 +1,73 @@
+name: Deploy New Project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, windows, x64]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check Docker
+        shell: powershell
+        run: |
+          docker --version
+          if ($LASTEXITCODE -ne 0) {
+            throw "Docker is unavailable."
+          }
+
+      - name: Build Docker Image
+        shell: powershell
+        run: |
+          docker build -t new-project:latest .
+          if ($LASTEXITCODE -ne 0) {
+            throw "Docker build failed."
+          }
+
+      - name: Remove Old Container
+        shell: powershell
+        run: |
+          $existing = docker ps -a --format "{{.Names}}"
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not inspect Docker containers."
+          }
+
+          if ($existing -contains "new-project") {
+            docker rm -f new-project
+            if ($LASTEXITCODE -ne 0) {
+              throw "Could not remove old container."
+            }
+          }
+
+      - name: Start New Container
+        shell: powershell
+        run: |
+          docker run -d `
+            --name new-project `
+            --restart unless-stopped `
+            -p 8081:80 `
+            new-project:latest
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not start new container."
+          }
+
+      - name: Verify Deployment
+        shell: powershell
+        run: |
+          Start-Sleep -Seconds 5
+          docker ps --filter "name=new-project"
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Deployment verification failed."
+          }
