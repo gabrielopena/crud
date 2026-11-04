@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "CLIENT",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus12.actions.githubusercontent.com/8jaXqxuxzDYTqOhipncRJuQkZ7p9PaLTyLBDrW75yD5gkybVXj/",
+  "gitHubUrl": "https://github.com/gabrielopena/crud",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
