@@ -4,7 +4,7 @@
       <div class="page-shell">
         <div class="hero-panel">
           <span class="dashboard-label">DASHBOARD</span>
-          <h1>Stopybai GaeBai Band List</h1>
+          <h1>Stopybai GaeBai List</h1>
           <div class="stats-pill">
             <span>{{ items.length }}</span>
             <small>ITEMS</small>
